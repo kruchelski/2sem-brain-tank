@@ -14,7 +14,7 @@ Prof. Alexander Robert Kutzke
 
 # Especificação de Trabalho Prático
 
-O trabalho prática envolve a criação de uma aplicação WEB completa. Ou seja,
+O trabalho prático envolve a criação de uma aplicação WEB completa. Ou seja,
 que inclua a implementação de front-end, back-end e que possua integração com 
 um banco de dados.
 
@@ -35,10 +35,10 @@ A aplicação desenvolvida deve atender os seguintes requisitos:
 	  * Possuir, ao menos, duas tabelas com relacionamento entre si;
 		* Modelagem consistente do banco de dados;
 	* Criação, edição e remoção de itens do banco de dados;
-	* Sistema de autenticação/autorização de usuário(s) salvos em banco de dados;
+	* Sistema de autenticação/autorização de usuário(s) salvo(s) em banco de dados;
   * Validação de campos de formulário e outras informações recebidas.
 
-### Ambiente de Desenvolvimento
+## Ambiente de Desenvolvimento
 
 * O sistema deve ser desenvolvido utilizando **apenas** os recursos demonstrados
 na disciplina DS120 (PHP, Javascript (JQuery), HTML5, CSS3 e algum banco de dados);
@@ -59,7 +59,7 @@ desenvolvedores do repositório e, finalmente, comece a editar os seus arquivos.
 
 ## Documentação
 
-O repositório deverá conter um arquivo chamado `README.md` contendo a descrição
+O repositório deverá conter um arquivo chamado `README.md` com a descrição
 do sistema e de seu funcionamento. Deve-se utilizar a sintaxe correta da
 linguagem **Markdown** nesse documento (para saber mais, consulte: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
@@ -68,7 +68,7 @@ Ou seja, pode apagar esse conteúdo sem problemas.
 
 ## Critério para avaliação
 
-Os critérios para avaliação na disciplina de WEB1 serão os seguintes:
+Os critérios para avaliação serão os seguintes:
 
  * **Defesa e conceitos** [4 pontos]:
     * Documentação e entrega pelo gitlab [1 ponto]; 
