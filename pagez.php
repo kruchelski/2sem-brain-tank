@@ -11,13 +11,14 @@
 	}
 	/* Verifica se a requisiçao é POST, o que significa que o a informação está sendo inserida pela primeira vez
 	ou então que está sendo editada */
+	$status = "";
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		if(!empty($_POST['aaa'])) {             // veirifica se a key 'aaa' do array superglobal $_POST está vazia
-			$textinho = sanitize($_POST['aaa']); // se não tiver, arruma pra evitar xss e sql injection
+		if(!empty($_POST['bolha'])) {             // veirifica se a key 'bolha' do array superglobal $_POST está vazia
+			$textinho = sanitize($_POST['bolha']); // se não tiver, arruma pra evitar xss e sql injection
 			$textinho = mysqli_real_escape_string($conn, $textinho); //coloca o texto na variavel
 
-			// preparar o query pra inserir na tabela do banco de dados.
-			$sql = "INSERT INTO $tablename (nome)
+			// preparar o query pra inserir na tabela bubbles.
+			$sql = "INSERT INTO $tablebubble (bolha)
 					VALUES ('$textinho')";
 			//insere as infos no BD conferindo se deu certo
 			if (!mysqli_query($conn, $sql)) {
@@ -31,12 +32,12 @@
 	}
 
 	//Pegar as informações do banco de dados
-	$sql = "SELECT id, nome FROM $tablename WHERE feito = false";
+	$sql = "SELECT id, bolha FROM $tablebubble WHERE apagada = false;";
 	if(!($bubbleOn = mysqli_query($conn,$sql))) {
   	die("Pobrema no carregamento de tarefas do BD<br>". mysqli_error($conn));
 	}
 
-	$sql = "SELECT id, nome FROM $tablename WHERE feito = true";
+	$sql = "SELECT id, bolha FROM $tablebubble WHERE apagada = true;";
 	if(!($bubbleOffTEMP = mysqli_query($conn,$sql))){
   	die("Problemas para carregar tarefas do BD!<br>". mysqli_error($conn));
 	}
@@ -61,25 +62,26 @@
 	    background-color: rgba(0,200,250,0.6);
 	    border-radius:50%;
 	    border:solid 3px black;
+	    position:relative;
   		}
 		.bounce{
-		 	animation:bounce 20s linear 200 ;
+		 	animation:bounce 10s linear 1200 ;
 		}
 		@keyframes bounce{
 		    0% {
-		    	transform:translate(0%,50%);
+		    	transform:translate(0px,100px);
 		     }
 		    25% {
-		    	transform:translate(50%,100%);		      
+		    	transform:translate(500px,200px);		      
 		    }
 		    50% {
-		    	transform:translate(100%,50%);  		      
+		    	transform:translate(1000px,100px);  		      
 		    }
 		    75% {
-		    	transform:translate(50%,0%);  
+		    	transform:translate(500px,0px);  
 		    }
 		    100% {
-		    	transform:translate(0%, 50%);
+		    	transform:translate(0px, 100px);
 		    }   
 		}
 		.chuchu {
@@ -100,14 +102,14 @@
 	</script>
 </head>
 <body>
-	<h2 style="font-family:helvetica; color:green; text-align:center"> Formulariozinho de bosta </h2>
+	<h2 style="font-family:helvetica; color:green; text-align:center"> BRAIN TANK </h2>
 	<br>
 	<br>
-	<p><?= $status ?> <!--mensagens de status temporarias -->
 	<form action="<?php echo($_SERVER['PHP_SELF']) ?>" method="POST">
-		<input required type="text" name="aaa" placeholder="socorrooo">
-		<button type="submit">FOI</button>
+		<input required type="text" name="bolha" placeholder="What's in your mind?">
+		<button type="submit">BUBBLE IT!</button>
 	</form>
+	<p><?= $status ?></p> <!--mensagens de status temporarias -->
 	<hr>
 	<!--INICIA A EXIBIÇAO DAS INFOS DO BD >>>>> BUBBLES ON-->
 	<div style="background-color:rgba(200,50,30,0.5); border:solid 3px black; border-radius: 10px">
@@ -118,11 +120,10 @@
 		<?php while($bubble = mysqli_fetch_assoc($bubbleOn)): ?>
 			<div style="width:100%; height: 100%; background-color: green;">
 			<div class="circle bounce">
-				<p class="chuchu"><?= $bubble['nome'] ?> </p>
+				<p class="chuchu"><?= $bubble['bolha'] ?> </p>
 				<br>
 			</div>
 		</div>
-			<?php $count++; ?>
 		<?php endwhile; ?>
 	<!--  FIM DA EXIBIÇAO DAS COISAS >>>>>> BUBBLES ON-->
 	<?php else: ?>
