@@ -25,10 +25,9 @@
 				$status = "DEU ERRO<br>".mysqli_error($conn);
 			}
 			else {
-				$status = "YEAH";
+				$status = "Yeah! Vai bolha!";
 			}
 		}
-
 	}
 
 	//Pegar as informações do banco de dados
@@ -45,80 +44,39 @@
 
 	mysqli_close($conn);
 ?>
-
+<!-- INICIO DO HTML-------------------------------------------->
+<!------------------------------------------------------------->
 <!DOCTYPE html>
 <html>
 <head>
-	<title> PAGEZZZ </title>
+	<title> BrainTank v0.7 </title>
 	<meta charset="utf-8">
-	<style>
-		.chuchu {
-			font-family: helvetica;
-			text-align: center;
-		}
-		.circle {
-	    width:100px;
-	    height:100px;
-	    background-color: rgba(0,200,250,0.6);
-	    border-radius:50%;
-	    border:solid 3px black;
-	    position:relative;
-  		}
-		.bounce{
-		 	animation:bounce 10s linear 1200 ;
-		}
-		@keyframes bounce{
-		    0% {
-		    	transform:translate(0px,100px);
-		     }
-		    25% {
-		    	transform:translate(500px,200px);		      
-		    }
-		    50% {
-		    	transform:translate(1000px,100px);  		      
-		    }
-		    75% {
-		    	transform:translate(500px,0px);  
-		    }
-		    100% {
-		    	transform:translate(0px, 100px);
-		    }   
-		}
-		.chuchu {
-  			font-family: helvetica;
-  			font-size:14px;
-  			margin-top:50%;
-  			margin-bottom: 50%;
-  			color:rgba(50,50,50,0.9);
-		}
-	</style>
+	<link rel="stylesheet" text="text/css" href="lindo.css">
 	<script>
 		function fazBolha() {
-		var x = document.getElementById("<?= 'bolha'.'$count';?>");
-		x.style.display = dysplay;
+			var x = document.getElementById("<?= 'bolha'.'$count';?>");
+			x.style.display = dysplay;
 		}
-
-
-	</script>
+  </script>
 </head>
 <body>
-	<h2 style="font-family:helvetica; color:green; text-align:center"> BRAIN TANK </h2>
-	<br>
-	<br>
+	<h2 id="titulo"> BRAIN TANK </h2><br>
+	<audio id="audio" src="ost.mp3" autoplay controls></audio>	<br><br>
 	<form action="<?php echo($_SERVER['PHP_SELF']) ?>" method="POST">
-		<input required type="text" name="bolha" placeholder="What's in your mind?">
-		<button type="submit">BUBBLE IT!</button>
+		<input id="input" required type="text" name="bolha" placeholder="What's on your mind?">
+		<br>
+		<button id="botao" type="submit" onclick="play()">BUBBLE IT!</button>
 	</form>
 	<p><?= $status ?></p> <!--mensagens de status temporarias -->
 	<hr>
 	<!--INICIA A EXIBIÇAO DAS INFOS DO BD >>>>> BUBBLES ON-->
-	<div style="background-color:rgba(200,50,30,0.5); border:solid 3px black; border-radius: 10px">
-	<h3 style="text-align: center; font-family:helvetica; color: blue"> BUBBLEON </h3>
+	<div id="bolhario">
+	<h3 id="bubbleon"> BUBBLEON </h3>
 	<hr>
-	
+
 	<?php if(mysqli_num_rows($bubbleOn) > 0): ?>
 		<?php while($bubble = mysqli_fetch_assoc($bubbleOn)): ?>
-			<div style="width:100%; height: 100%; background-color: green;">
+			<div style="width:100%; height: 100%; background-color: lightblue;">
 			<div class="circle bounce">
 				<p class="chuchu"><?= $bubble['bolha'] ?> </p>
 				<br>
@@ -127,7 +85,7 @@
 		<?php endwhile; ?>
 	<!--  FIM DA EXIBIÇAO DAS COISAS >>>>>> BUBBLES ON-->
 	<?php else: ?>
-		<p style="font-family: helvetica; color:red">Tem nada aqui</p>
+		<p id="vazio">Tem nada aqui... ainda</p>
 	<?php endif; ?>
 </div>
 </body>

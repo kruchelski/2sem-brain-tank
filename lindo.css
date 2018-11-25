@@ -1,0 +1,131 @@
+/* CSS Mais Original del Mundo */
+
+html {
+  background-color: lightyellow;
+}
+
+#titulo {
+  width:100%;
+
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  font-family:cursive;
+  color: #1C1C1C;
+  text-align:center;
+  border-style:dotted;
+  border-width: 4px;
+  border-radius: 20px;
+  background-color: lightblue;
+}
+
+#audio {
+  position: relative;
+  bottom: -10%;
+}
+
+#input {
+  position: relative;
+  top: -10px;
+  left: 25%;
+  width: 45%;
+  border: 5px solid black;
+  padding: 10px;
+  text-align: center;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 20px;
+  color: #1C1C1C;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #1C1C1C;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #1C1C1C;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #1C1C1C;
+}
+
+#botao {
+  position: relative;
+  top: 10px;
+  left: 39%;
+  width: 20%;
+  border: 5px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 20px;
+  color: #1C1C1C;
+  background-color: lightgreen;
+}
+
+#bolhario {
+  position: relative;
+  min-height: 100vh;
+  background-color: lightblue;
+  border:solid 5px black;
+  border-radius: 20px;
+}
+
+#bubbleon {
+  text-align: center;
+  font-size: 30px;
+  font-family:cursive;
+  font-weight: bold;
+  color: #1C1C1C;
+  padding: 10px;
+}
+
+#vazio {
+   font-family: cursive;
+   font-size: 20px;
+   color:red;
+} 
+
+.circle {
+  width:100px;
+  height:100px;
+  margin-top: 10px;
+  background-color: rgba(0,200,250,0.6);
+  border-radius:50%;
+  border:solid 3px black;
+  position:relative;
+ }
+.bounce{
+  animation:bounce 30s linear 1200 ;
+}
+  @keyframes bounce{
+      0% {
+          transform:translate(0px,100px);
+         }
+        25% {
+          transform:translate(500px,150px);
+        }
+        50% {
+          transform:translate(1000px,100px);
+        }
+        75% {
+          transform:translate(500px,0px);
+        }
+        100% {
+          transform:translate(0px, 100px);
+        }
+    }
+    .chuchu {
+        font-family: cursive;
+        font-weight: bold;
+        text-align: center;
+        font-size:14px;
+        margin-top:40%;
+        font-weight: bold;
+        margin-bottom: 50%;
+        color:rgba(50,50,50,0.9);
+    }
