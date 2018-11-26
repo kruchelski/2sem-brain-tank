@@ -6,5 +6,4 @@
 	$dbname = "dbBrainTank";
 	$tablebubble = "bubbles";
 	$tablename = "names";
-	$tablelist = "list"
 ?>

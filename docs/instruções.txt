@@ -1,0 +1,36 @@
+## INSTRUÇOES (BEM) BÁSICAS DA APLICAÇÃO ##
+
+> Nome do banco de dados utilizado: dbBrainTank
+
+>> Neste DB tem duas tabelas: bubbles e names
+
+>>> bubbles é a tabela que contém as informações sobre as bolhas:
+
+>>>> id - Identificador numeral dela (auto incrementado)
+>>>> bolha - Texto da bolha
+>>>> nameid - Identificador de qual usuário criou a bolha
+
++--------------------------+
+| table: bubbles           |
++----+------------+--------+
+| id | bolha      | nameid |
++----+------------+--------+
+
+>>> names é a tabela que contém as informações sobre os usuários:
+
+>>>> id - Identificador numérico de cada usuário (auto incrementado)
+>>>> nome - Nome do usuário
+>>>> senha do usuário (com hash md5)
+
++----------------------+
+| table: names.        |
++----+----------+------+
+| id | nome     |senha |
++----+----------+------+
+
+
+>> As variávies da $_SESSION utilizadas para gravar informações sobre o usuário logado são:
+
+>>> $_SESSION["idUser"] - Coleta a id do usuário
+>>> $_SESSION["nameUser"] - Coleta o nome do usuário
+

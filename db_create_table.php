@@ -17,21 +17,6 @@
 	else {
 		echo("<br>Deu ruim". mysqli_error($conn));
 	}
-
-	//criaçao da tabela bubbles
-	$sql = "CREATE TABLE $tablebubble (
-			id INT(6) AUTO_INCREMENT, 
-			bolha varchar(50) NOT NULL, 
-			apagada boolean DEFAULT false,
-			PRIMARY KEY (id));";
-
-	if (mysqli_query($conn, $sql)) {
-		$statusbubble = 'Tabela '.$tablebubble.' criada com sucesso';
-	}
-	else {
-		$statusbubble = 'Tabela '.$tablebubble.' não criada :( '.mysqli_error($conn);
-	}
-
 	//criaçao da tabela names
 	$sql = "CREATE TABLE $tablename (
 			id INT(6) AUTO_INCREMENT, 
@@ -46,22 +31,19 @@
 		$statusbubble = 'Tabela '.$tablename.' não criada :( '.mysqli_error($conn);
 	}
 
-	//criaçao da tabela list (que faz o link entre as outras duas tabelas)
-	$sql = "CREATE TABLE $tablelist (
-			bubbleid INT(6) NOT NULL, 
-			nameid  INT(6) NOT NULL, 
-			PRIMARY KEY (bubbleid, nameid),
-			FOREIGN KEY (bubbleid) REFERENCES $tablebubble(id),
-			FOREIGN KEY (nameid) REFERENCES $tablename(id));";
+	//criaçao da tabela bubbles
+	$sql = "CREATE TABLE $tablebubble (
+			id INT(6) AUTO_INCREMENT, 
+			bolha varchar(50) NOT NULL, 
+			nameid INT(6) NOT NULL,
+			PRIMARY KEY (id));";
 
 	if (mysqli_query($conn, $sql)) {
-		$statuslist = 'Tabela '.$tablelist.' criada com sucesso';
+		$statusbubble = 'Tabela '.$tablebubble.' criada com sucesso';
 	}
 	else {
-		$statuslist = 'Tabela '.$tablelist.' não criada :( '.mysqli_error($conn);
+		$statusbubble = 'Tabela '.$tablebubble.' não criada :( '.mysqli_error($conn);
 	}
-
-
 
 	mysqli_close($conn);
 ?>
