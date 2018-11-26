@@ -141,15 +141,11 @@
 		<?php if(mysqli_num_rows($bubbleOn) > 0): ?>
 			<?php while($bubble = mysqli_fetch_assoc($bubbleOn)): ?>
 
-				<div>
-					<a href="<?= $_SERVER['PHP_SELF']."?id=" . $bubble["id"] . "&" . "action=excluir" ?>" method="GET"> 
+				<div> 
 					<div id = "<?= 'bolha'.$count; ?>" class="circle" onload="fazBolha(<?= 'bolha'.$count; ?>)">
 
-						<p class="chuchu"><?= $bubble['bolha'] ?> </p>
-
-						<br>
+						<a href="<?= $_SERVER['PHP_SELF']."?id=" . $bubble["id"] . "&" . "action=excluir" ?>" method="GET">	<p class="chuchu"><?= $bubble['bolha'] ?> </p></a>
 					</div>
-					</a>
 				</div>
 			<?= '<script>fazBolha("bolha" + ';?> <?= $count.', '.$count.');</script>';?> <!--funçao pra chamar bolha-->
 			<?php $count = $count + 1; endwhile; ?>
