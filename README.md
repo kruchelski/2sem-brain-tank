@@ -1,106 +1,31 @@
-ALTERADO
-Tecnologia em Análise e Desenvolvimento de Sistemas
+# BRAIN TANK  
 
-Setor de Educação Profissional e Tecnológica - SEPT
-
-Universidade Federal do Paraná - UFPR
-
+## Assignment for Web Development I course.   
 ---
+### Justification  
+The Web Development 1 course has a final assignment that must be done in group. The ideia of this exercise is to practice the languages and stuff learned through an application that make use of a login system, css, javascript, php, sql database and basic security measures to avoid xss and sql injection attacks.  
+This application was made in colaboration with [Andre K. Antunes](https://github.com/andrekantunes). In general, the frontend was mostly made by Andre and the backend by me.  
+    
+### Description  
+Brain tank is an application in which the user can write words or short sentences and after they will start to float in the screen, like bubbles in a water tank. The goal is to present the user's ideas and thoughs in a different way so the visualization can make possible to form up new ideas, like a brainstorming.  
+At any moment the user can click over a bubble and it will disappear.
+The application uses a login system which provides the possibility of each user maintain it bubble's group  
 
-*DS120 - Desenvolvimento de Aplicações Web 1*
+### Instructions  
+- Preparation - check out the  'db_credentials.php' file. Change it according to your settings for access the database
+- Running for the first time - First of all it's necessary to create the database and the tables used in the application. The easiest way is to first open the 'db_create.php' page which will create a database, and then (if not redirect automatically) open the 'db_create-table.php' page, which will create the two tables used in this application. After that (if not redirect automatically), open the 'pagez.php' to, in fact, run the application.
+- Running after the first time - Simple open the 'pagez.php'
 
-Prof. Alexander Robert Kutzke
+### Specs 
+During the development and the presentation of the Braint Tank, the environment used was:
+- Apache  
+- MySQL  
+- PHP  
 
-**[Instruções para submissão de tarefas e trabalhos](http://gitlab.tadsufpr.net.br/ds120-alexkutzke/ds120-material-2017-2/blob/master/instrucoes_submissao_tarefas_e_trabalhos.md);**
+### Why not use a index.php?
+Randomness (noobie stupidity)
 
-# Especificação de Trabalho Prático
-
-O trabalho prático envolve a criação de uma aplicação WEB completa. Ou seja,
-que inclua a implementação de front-end, back-end e que possua integração com 
-um banco de dados.
-
-## Tema
-
-O tema da aplicação a ser desenvolvida é livre. 
-
-## Requisitos
-
-A aplicação desenvolvida deve atender os seguintes requisitos:
-
- * **Front-end**:
-  * Uso de HTML5, CSS3 e JS;
-	* Interface amigável; ;
-	* Validação de campos de formulário;
- * **Back-end**;
-  * Integração com um banco de dados:
-	  * Possuir, ao menos, duas tabelas com relacionamento entre si;
-		* Modelagem consistente do banco de dados;
-	* Criação, edição e remoção de itens do banco de dados;
-	* Sistema de autenticação/autorização de usuário(s) salvo(s) em banco de dados;
-  * Validação de campos de formulário e outras informações recebidas.
-
-## Ambiente de Desenvolvimento
-
-* O sistema deve ser desenvolvido utilizando **apenas** os recursos demonstrados
-na disciplina DS120 (PHP, Javascript (JQuery), HTML5, CSS3 e algum banco de dados);
-  * É permitido o uso de frameworks *front-end*, como Bootstrap e W3.CSS;
-  * **Não** é permitido o uso de frameworks *back-end*.
-
-## Entrega
-
-O trabalho pode ser feito em **grupos de até 3 alunos**.
-
-O sistema produzido deverá ser armazenado em um **repositório privado** na
-plataforma Gitlab TADS (http://gitlab.tadsufpr.net.br). 
-
-Para tanto, siga as instruções normais de submissão de trabalho da disciplina. Ou seja,
-faça um fork desse repositório, salve-o em seu grupo, torne-o privado, 
-adicione os colegas do seu grupo como
-desenvolvedores do repositório e, finalmente, comece a editar os seus arquivos.
-
-## Documentação
-
-O repositório deverá conter um arquivo chamado `README.md` com a descrição
-do sistema e de seu funcionamento. Deve-se utilizar a sintaxe correta da
-linguagem **Markdown** nesse documento (para saber mais, consulte: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-Em outras palavras, você deverá alterar exatamente este aquivo que está lendo agora.
-Ou seja, pode apagar esse conteúdo sem problemas.
-
-## Critério para avaliação
-
-Os critérios para avaliação serão os seguintes:
-
- * **Defesa e conceitos** [4 pontos]:
-    * Documentação e entrega pelo gitlab [1 ponto]; 
-    * Organização do banco de dados [1 ponto];
-    * Estrutura e clareza do código [1 ponto]
-    * Qualidade da defesa e domínio do código [1 ponto];
-
- * **Funcionalidades e implementação** [6 pontos]:
-   * Sistema de autenticação (login) [1 ponto];
-   * Cadastro, alteração e remoção de informações no banco de dados [1 ponto];
-   * Qualidade da interface do usuário [1 ponto];
-   * Validação das informações de formulários e afins [1 ponto];
-	 * Funcionamento da aplicação e qualidade da implementação [2 pontos];
-
-## Defesa
-
-O trabalho realizado deve ser defendido pelo grupo. A defesa consiste em
-uma apresentação do sistema em funcionamento apenas ao professor da disciplina.
-Nesse momento, o professor fará perguntas sobre a implementação da aplicação,
-as quais devem ser respondidas por todos os integrantes do grupo.
-
-A defesa do trabalho será realizada durante horário de aula, em data
-a ser definida pelo professor.
-
-## Sugestão de tema
-
-Uma possível aplicação a ser desenvolvida é a seguinte:
-
-> Um blog simples no qual um *usuário administrador* pode inserir novos *posts*. Todos
-> os *posts* possuem uma data de criação e de atualização, as quais são exibidas
-> aos leitores. Cada *post* pertence à uma *categoria* e pode possuir zero ou mais
-> *comentários*. Leitores podem visualizar os *posts* existentes em uma *categoria* e
-> fazer comentários nos *posts*. Para melhorar a qualidade do blog, os *posts* escritos
-> pelo administrador podem receber tags HTML em seu conteúdo.
+### Final considerations  
+As this web application was made as an exercise, this means that is possible that have bugs and, also,  the application is not the best possible.  
+**Important**: The reason I created this repository is to share with other class colleagues or anyone who needs examples of web development.  
+PS: Any suggestion for improvment is welcome
